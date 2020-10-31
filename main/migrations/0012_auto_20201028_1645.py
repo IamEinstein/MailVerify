@@ -15,6 +15,15 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='id',
             name='time_created',
-            field=models.DateTimeField(default=datetime.datetime(2020, 10, 28, 11, 15, 25, 830843, tzinfo=utc)),
+            field=models.DateTimeField(
+                default=datetime.datetime(
+                    2020,
+                    10,
+                    28,
+                    11,
+                    15,
+                    25,
+                    830843,
+                    tzinfo=utc)),
         ),
     ]

@@ -1,6 +1,8 @@
 
 # * FOR FUNCTIONS RELATED TO MAIL
 # * made this file to verify emails
+
+
 def verifymail(mail):
     from validate_email import validate_email
     return validate_email(mail)
@@ -24,7 +26,7 @@ def send__mail(pk, mail):
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-  
+
     <form action="/id" method="post" class="bg-light"  style="padding:5%;"  >
     <h1>Hey👋, {id.name}</h1>
     <h2>Welcome to MailVerify</h2>

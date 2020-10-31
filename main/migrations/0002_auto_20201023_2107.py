@@ -12,13 +12,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='id',
-            name='ip',
-            field=models.CharField(blank=True, max_length=20, null=True),
-        ),
-        migrations.AlterField(
-            model_name='id',
-            name='time_created',
-            field=models.DateTimeField(default=datetime.datetime(2020, 10, 23, 21, 7, 49, 875478)),
-        ),
-    ]
+            model_name='id', name='ip', field=models.CharField(
+                blank=True, max_length=20, null=True), ), migrations.AlterField(
+            model_name='id', name='time_created', field=models.DateTimeField(
+                default=datetime.datetime(
+                    2020, 10, 23, 21, 7, 49, 875478)), ), ]

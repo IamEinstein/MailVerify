@@ -13,13 +13,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='id',
-            name='mail',
-            field=models.CharField(max_length=100, unique=True),
-        ),
-        migrations.AlterField(
-            model_name='id',
-            name='time_created',
-            field=models.DateTimeField(default=datetime.datetime(2020, 10, 23, 15, 44, 45, 630483, tzinfo=utc)),
-        ),
-    ]
+            model_name='id', name='mail', field=models.CharField(
+                max_length=100, unique=True), ), migrations.AlterField(
+            model_name='id', name='time_created', field=models.DateTimeField(
+                default=datetime.datetime(
+                    2020, 10, 23, 15, 44, 45, 630483, tzinfo=utc)), ), ]

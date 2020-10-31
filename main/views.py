@@ -25,7 +25,11 @@ def mail(request):
 
             for item in Id.objects.all():
                 if item.mail == mail:
-                    return render(request, 'main/index.html', context={"error": "You have already registered"})
+                    return render(
+                        request,
+                        'main/index.html',
+                        context={
+                            "error": "You have already registered"})
                 else:
                     pass
             try:
@@ -33,13 +37,25 @@ def mail(request):
                 id.name = name
                 id.username = username
             except IntegrityError:
-                return render(request, 'main/index.html', context={"error": "You have already registered"})
+                return render(
+                    request,
+                    'main/index.html',
+                    context={
+                        "error": "You have already registered"})
             id.save()
             return redirect('mail:sent', id.pk)
         else:
-            return render(request, 'main/index.html', context={"error": "Provide a valid mail"})
+            return render(
+                request,
+                'main/index.html',
+                context={
+                    "error": "Provide a valid mail"})
     else:
-        return render(request, 'main/error.html', context={"error": "Invalid Method"})
+        return render(
+            request,
+            'main/error.html',
+            context={
+                "error": "Invalid Method"})
 
 
 def id(request, id):
@@ -53,9 +69,13 @@ def id(request, id):
                 valid = False
         elif id not in i.unique_id:
             valid = False
-    if valid == False:
-        return render(request, 'main/id.html', context={"id": "Session Expired/ID not valid"})
-    elif valid == True:
+    if not valid:
+        return render(
+            request,
+            'main/id.html',
+            context={
+                "id": "Session Expired/ID not valid"})
+    elif valid:
         crr_id = Id.objects.get(unique_id=id)
         user = User.objects.create()
         user.mail = crr_id.mail
