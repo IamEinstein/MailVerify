@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: asgiref
+    versions:
+    - 3.3.2
+  - dependency-name: django
+    versions:
+    - 3.1.5
+    - 3.1.6
+    - 3.1.7
+  - dependency-name: autopep8
+    versions:
+    - 1.5.5
+    - 1.5.6
